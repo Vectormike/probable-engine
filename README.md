@@ -1,3 +1,5 @@
+# **Backend Developer Assessment**
+
 ## Manual Installation
 
 If you would still prefer to do the installation manually, follow these steps:
@@ -5,7 +7,7 @@ If you would still prefer to do the installation manually, follow these steps:
 Clone the repo:
 
 ```bash
-git clone --depth 1
+git clone --depth 1 https://github.com/Vectormike/probable-engine meekfi-assessment
 cd meekfi-assessment
 ```
 
@@ -53,37 +55,14 @@ yarn coverage
 Docker:
 
 ```bash
-# run docker container in development mode
-yarn docker:dev
-
-# run docker container in production mode
-yarn docker:prod
-
-# run all tests in a docker container
-yarn docker:test
-```
-
-Linting:
-
-```bash
-# run ESLint
-yarn lint
-
-# fix ESLint errors
-yarn lint:fix
-
-# run prettier
-yarn prettier
-
-# fix prettier errors
-yarn prettier:fix
+docker-compose -up -d
 ```
 
 ## Environment Variables
 
 The environment variables can be found and modified in the `.env` file. They come with these default values:
 
-````bash
+```bash
 # Port number
 PORT=5222
 
@@ -97,6 +76,8 @@ JWT_SECRET=thisisasamplesecret
 JWT_ACCESS_EXPIRATION_MINUTES=30
 # Number of days after which a refresh token expires
 JWT_REFRESH_EXPIRATION_DAYS=30
+
+```
 
 ## API Documentation
 
@@ -122,32 +103,9 @@ List of available routes:
 `PATCH /v1/users/:userId` - update user\
 `DELETE /v1/users/:userId` - delete user
 
-
-## Description
-
-[MeekFi](https://meekfi.com)
-
-# **Backend Developer Assessment**
-
-#### **Submission Links**
-
-## Running the app
-
-- cd into `meekfi`
-- run `npm install`
-- set up your MySQL database
-- rename `.env.sample` to `.env` and populate the required parameters
-- run `npm run start:dev`
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-```
-
 ---
+
+## **High Level System Design**
 
 This documnet provides information about my solution to the MeekFi Backend Developer Assessment
 which required that I build an API in that allow it's users perform the following actions:
@@ -158,8 +116,6 @@ which required that I build an API in that allow it's users perform the followin
 - delete account
 
 The following sections give more details into the API and the various design choices that were made.
-
-## **High Level System Design**
 
 The diagram below shows the various components of the system as can be infered from its requirements.
 
@@ -182,7 +138,7 @@ Below are some of the assumptions made while designing the features and function
 
 ## Create User
 
-- URL: /users
+- URL: /register
 - Method: POST
 - Request body:
 
@@ -192,7 +148,8 @@ Below are some of the assumptions made while designing the features and function
   - Password (string)
 
 - Response body:
-  - User ID (string)
+  - User (object)
+  - Tokens (object)
 
 #### Login
 
@@ -203,8 +160,8 @@ Below are some of the assumptions made while designing the features and function
   - Email address (string)
   - Password (string)
 - Response body:
-  - User ID (string)
-  - Access token (string)
+  - User (object)
+  - Tokens (object)
 
 ### Get User
 
@@ -267,4 +224,7 @@ We included rate limiting to prevent abuse of the API by limiting the number of 
 We can include logging and monitoring to help us diagnose and fix issues that may arise with the system.
 
 For security reasons, we want to get the user ID
-````
+
+```
+
+```
