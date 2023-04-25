@@ -1,6 +1,6 @@
 # **Backend Developer Assessment**
 
-![Meek](./meekfi.png)
+![Meek](https://res.cloudinary.com/dangqctnm/image/upload/v1682447079/meekfi_ljmlaq.png)
 
 ## Manual Installation
 
