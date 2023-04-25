@@ -1,5 +1,7 @@
 # **Backend Developer Assessment**
 
+![Meek](./meekfi.png)
+
 ## Manual Installation
 
 If you would still prefer to do the installation manually, follow these steps:
@@ -219,12 +221,9 @@ A refresh token is valid for 30 days. You can modify this expiration time by cha
 ### Additional Considerations
 
 We included validation checks for all incoming requests to ensure that the request body is in the correct format and that all required fields are present.
+
 We included error handling to return meaningful error messages to the client when something goes wrong.
+
 We included rate limiting to prevent abuse of the API by limiting the number of requests a client can make within a certain timeframe.
+
 We can include logging and monitoring to help us diagnose and fix issues that may arise with the system.
-
-For security reasons, we want to get the user ID
-
-```
-
-```
