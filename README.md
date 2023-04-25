@@ -227,3 +227,9 @@ We included error handling to return meaningful error messages to the client whe
 We included rate limiting to prevent abuse of the API by limiting the number of requests a client can make within a certain timeframe.
 
 We can include logging and monitoring to help us diagnose and fix issues that may arise with the system.
+
+### Project Folder Structure
+
+This section describes the structure of the files/folders which hold the project code.
+
+![](https://res.cloudinary.com/dangqctnm/image/upload/v1682447425/Screen_Shot_2023-04-25_at_7.30.06_PM_epfikb.png)
