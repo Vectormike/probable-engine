@@ -122,55 +122,10 @@ List of available routes:
 `PATCH /v1/users/:userId` - update user\
 `DELETE /v1/users/:userId` - delete user
 
-## Error Handling
-
-The app has a centralized error handling mechanism.
-
-Controllers should try to catch the errors and forward them to the error handling middleware (by calling `next(error)`). For convenience, you can also wrap the controller inside the catchAsync utility wrapper, which forwards the error.
-
-```javascript
-const catchAsync = require('../utils/catchAsync');
-
-const controller = catchAsync(async (req, res) => {
-  // this error will be forwarded to the error handling middleware
-  throw new Error('Something wrong happened');
-});
-````
-
-The error handling middleware sends an error response, which has the following format:
-
-```json
-{
-  "code": 404,
-  "message": "Not found"
-}
-```
 
 ## Description
 
 [MeekFi](https://meekfi.com)
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Environemnt setup
-
-The environment variables for this app are contained in the `.env` file inside the project's Google Drive folder.
-
-Copy the file into the project's root directory after Installing node modules.
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-```
 
 # **Backend Developer Assessment**
 
@@ -312,3 +267,4 @@ We included rate limiting to prevent abuse of the API by limiting the number of 
 We can include logging and monitoring to help us diagnose and fix issues that may arise with the system.
 
 For security reasons, we want to get the user ID
+````
