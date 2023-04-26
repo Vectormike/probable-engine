@@ -7,7 +7,7 @@ const createUser = {
     dateOfBirth: Joi.date().required(),
     email: Joi.string().required().email(),
     password: Joi.string().required().custom(password),
-    role: Joi.string().required().valid('user', 'admin'),
+    role: Joi.string().required().valid('user'),
   }),
 };
 
@@ -34,6 +34,7 @@ const updateUser = {
   body: Joi.object()
     .keys({
       email: Joi.string().email(),
+      dateOfBirth: Joi.date(),
       password: Joi.string().custom(password),
       name: Joi.string(),
     })
