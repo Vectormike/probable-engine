@@ -83,7 +83,7 @@ JWT_REFRESH_EXPIRATION_DAYS=30
 
 ## API Documentation
 
-To view the list of available APIs and their specifications, run the server and go to `` in your browser.
+To view the list of available APIs and their specifications, run the server and go to [Postman Doc](https://documenter.getpostman.com/view/5622145/2s93Y6tf4C) in your browser.
 
 ### API Endpoints
 
